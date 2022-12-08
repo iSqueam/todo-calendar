@@ -30,6 +30,9 @@ gem "jbuilder"
 # Devise gem
 gem "devise", "~> 4.8"
 
+# Calendar gem
+gem "simple_calendar", "~> 2.4"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -59,7 +62,6 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "faker"
