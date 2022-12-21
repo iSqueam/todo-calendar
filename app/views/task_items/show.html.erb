@@ -1,14 +1,10 @@
-<p id="notice"><%= notice %></p>
 <p>
   <strong>Title:</strong>
-  <%= @task_list.title %>
+  <%= @task_item.content %>
 </p>
 
 <div id="task_items_wrapper">
- <%= render @task_list.task_items %>
- <div id="form">
-  <%= render "task_items/form" %>
- </div>
+ <%= render @task_item %>
 </div>
-<%= link_to 'Edit', edit_task_list_path(@task_list) %> |
-<%= link_to 'Back', task_lists_path %>
+<%= link_to 'Edit', edit_task_list_task_item_path(@task_list, @task_item), method: :get %> |
+<%= link_to 'Back', :back %>

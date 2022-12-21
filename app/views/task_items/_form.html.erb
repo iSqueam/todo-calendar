@@ -1,4 +1,7 @@
-<%= form_for([@task_list, @task_list.task_items.build]) do |f| %>
-    <%= f.text_field :content, placeholder: "New Task" %>
+<%= form_for([@task_list, @task_item]) do |f| %>
+    <%= f.text_field :content, placeholder: "Task Name" %>
+    <%= f.text_field :description, placeholder: "Description" %>
+    <%= f.datetime_field :date %>
+    <%= f.number_field :priority, placeholder: "Priority (1-10)" %>
     <%= f.submit %>
    <% end %>

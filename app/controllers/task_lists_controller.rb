@@ -1,13 +1,15 @@
 class TaskListsController < ApplicationController
   before_action :set_task_list, only: %i[ show edit update destroy ]
+  attr_reader :user
 
   # GET /task_lists or /task_lists.json
   def index
-    @task_lists = TaskList.all
+    @task_lists = current_user.task_lists.all
   end
 
   # GET /task_lists/1 or /task_lists/1.json
   def show
+    # @task_list = TaskList.where(user_id: current_user.id).first
   end
 
   # GET /task_lists/new
@@ -21,7 +23,8 @@ class TaskListsController < ApplicationController
 
   # POST /task_lists or /task_lists.json
   def create
-    @task_list = TaskList.new(task_list_params)
+    p = task_list_params.merge({user: current_user})
+    @task_list = TaskList.new(p)
 
     respond_to do |format|
       if @task_list.save

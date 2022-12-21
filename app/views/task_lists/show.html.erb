@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <p>
   <strong>Title:</strong>
   <%= @task_list.title %>
@@ -8,10 +7,10 @@
   <%= @task_list.description %>
 </p>
 <div id="task_items_wrapper">
- <%= render @task_list.task_items %>
- <div id="form">
-  <%= render "task_items/form" %>
- </div>
+  <%= render @task_list.task_items %>
 </div>
-<%= link_to 'Edit', edit_task_list_path(@task_list) %> |
-<%= link_to 'Back', task_lists_path %>
+  <%= link_to "New Task", new_task_list_task_item_path(@task_list) %>
+<div>
+  <%= link_to 'Edit', edit_task_list_path(@task_list) %> |
+  <%= link_to 'Back', task_lists_path(@task_list) %>
+</div>
